@@ -14,7 +14,6 @@ public class Mark {
     private int counter;
     private Location location;
 
-
     public Mark() {
         // requires public constructor
     }

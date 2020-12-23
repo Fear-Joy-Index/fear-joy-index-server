@@ -1,30 +1,25 @@
 package ru.nsu.fearjoyindex.entity;
 
-import com.mongodb.client.model.geojson.Point;
+import com.mongodb.client.model.geojson.Polygon;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import java.util.List;
 
 @Document(collection = "locations")
 public class Location {
     @Id
     private String id;
 
-    private List<Point> location;
+    private Polygon polygon;
 
     public Location() {
         // requires public constructor
     }
 
-    public Location(List<Point> location) {
-        this.location = location;
+    public Polygon getPolygon() {
+        return polygon;
     }
 
-    public List<Point> getLocation() {
-        return location;
-    }
-
-    public void setLocation(List<Point> location) {
-        this.location = location;
+    public void setPolygon(Polygon polygon) {
+        this.polygon = polygon;
     }
 }
