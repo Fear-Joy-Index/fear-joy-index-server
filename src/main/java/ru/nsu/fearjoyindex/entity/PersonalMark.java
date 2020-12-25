@@ -2,28 +2,29 @@ package ru.nsu.fearjoyindex.entity;
 
 import com.mongodb.client.model.geojson.Position;
 
+import java.awt.geom.Point2D;
 import java.sql.Timestamp;
 
 public class PersonalMark {
 
-    private Position coords;
+    private Point2D.Double coords;
     private Timestamp timestamp;
     private int emotion;
 
     public PersonalMark() {
     }
 
-    public PersonalMark(Position coords, Timestamp timestamp, int emotion) {
+    public PersonalMark(Point2D.Double coords, Timestamp timestamp, int emotion) {
         this.coords = coords;
         this.timestamp = timestamp;
         this.emotion = emotion;
     }
 
-    public Position getLocation() {
+    public Point2D.Double getCoords() {
         return coords;
     }
 
-    public void setLocation(Position coords) {
+    public void setCoords(Point2D.Double coords) {
         this.coords = coords;
     }
 

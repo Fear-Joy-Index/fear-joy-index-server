@@ -7,7 +7,7 @@ import java.util.Date;
 @Document(collection = "marks")
 public class Mark {
     @Id
-    private int id;
+    private int _id;
 
     private double mark;
     private Date date;
