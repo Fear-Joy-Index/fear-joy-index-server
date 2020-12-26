@@ -8,9 +8,9 @@ public class Polygon {
 
     private String type;
 
-    private List<List<Double>> coordinates;
+    private List<List<List<Double>>> coordinates;
 
-    public Polygon(String type, List<List<Double>> coordinates) {
+    public Polygon(String type, List<List<List<Double>>> coordinates) {
         this.type = type;
         this.coordinates = coordinates;
     }
@@ -23,17 +23,18 @@ public class Polygon {
         this.type = type;
     }
 
-    public List<List<Double>> getCoordinates() {
+    public List<List<List<Double>>> getCoordinates() {
         return coordinates;
     }
 
-    public void setCoordinates(List<List<Double>> coordinates) {
+    public void setCoordinates(List<List<List<Double>>> coordinates) {
         this.coordinates = coordinates;
     }
 
     public ArrayList<Point2D.Double> toPointsList() {
         ArrayList<Point2D.Double> points = new ArrayList<>();
-        coordinates.forEach((point) -> {
+        List<List<Double>> coordsAsList = coordinates.get(0);
+        coordsAsList.forEach((point) -> {
             Double x = point.get(0);
             Double y = point.get(1);
             points.add(new Point2D.Double(x, y));

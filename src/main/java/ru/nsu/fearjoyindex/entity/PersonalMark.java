@@ -1,7 +1,5 @@
 package ru.nsu.fearjoyindex.entity;
 
-import com.mongodb.client.model.geojson.Position;
-
 import java.awt.geom.Point2D;
 import java.sql.Timestamp;
 
@@ -9,15 +7,15 @@ public class PersonalMark {
 
     private Point2D.Double coords;
     private Timestamp timestamp;
-    private int emotion;
+    private int mark;
 
     public PersonalMark() {
     }
 
-    public PersonalMark(Point2D.Double coords, Timestamp timestamp, int emotion) {
+    public PersonalMark(Point2D.Double coords, Timestamp timestamp, int mark) {
         this.coords = coords;
         this.timestamp = timestamp;
-        this.emotion = emotion;
+        this.mark = mark;
     }
 
     public Point2D.Double getCoords() {
@@ -36,11 +34,11 @@ public class PersonalMark {
         this.timestamp = timestamp;
     }
 
-    public int getEmotion() {
-        return emotion;
+    public int getMark() {
+        return mark;
     }
 
-    public void setEmotion(int emotion) {
-        this.emotion = emotion;
+    public void setMark(int mark) {
+        this.mark = mark;
     }
 }

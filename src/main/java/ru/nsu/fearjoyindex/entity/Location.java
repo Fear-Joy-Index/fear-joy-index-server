@@ -1,7 +1,10 @@
 package ru.nsu.fearjoyindex.entity;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.ArrayList;
 
 @Document(collection = "locations")
 public class Location {
@@ -14,6 +17,10 @@ public class Location {
 
     public Location() {
         // requires public constructor
+    }
+
+    public String get_id() {
+        return _id;
     }
 
     public String getType() {

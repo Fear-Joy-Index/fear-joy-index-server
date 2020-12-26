@@ -2,23 +2,21 @@ package ru.nsu.fearjoyindex.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import java.util.Date;
 
 @Document(collection = "marks")
 public class Mark {
     @Id
-    private int _id;
+    private String _id;
 
     private double mark;
-    private Date date;
+    private String date;
     private int counter;
     private Location location;
 
     public Mark() {
-        // requires public constructor
     }
 
-    public Mark(double mark, Date date, int counter, Location location) {
+    public Mark(double mark, String date, int counter, Location location) {
         this.mark = mark;
         this.date = date;
         this.counter = counter;
@@ -33,11 +31,11 @@ public class Mark {
         this.mark = mark;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

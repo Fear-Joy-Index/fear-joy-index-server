@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface LocationsRepository extends MongoRepository<Location, String> {
     List<Location> findAll();
+
+    Location findBy_id(String id);
 }
