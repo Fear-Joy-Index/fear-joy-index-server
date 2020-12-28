@@ -31,7 +31,7 @@ public class MessageController {
     }
 
     @RequestMapping(value = "/getMarks", method = RequestMethod.GET)
-    public ResponseEntity<ArrayList<MarksContainer>> getMarks(@RequestParam int size, int page) {
+    public ResponseEntity<ArrayList<MarksContainer>> getMarks() {
         return new ResponseEntity<>(collectionsService.wrapMarks(), HttpStatus.OK);
     }
 }
