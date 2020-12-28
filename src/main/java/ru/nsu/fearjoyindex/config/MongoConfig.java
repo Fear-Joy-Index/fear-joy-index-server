@@ -38,7 +38,9 @@ public class MongoConfig {
 
     @Bean
     public MongoClient mongo() {
-        ConnectionString connectionString = new ConnectionString("mongodb://localhost:27017/joyindex");
+        ConnectionString connectionString = new ConnectionString(
+                "mongodb+srv://test_admin:Lt2zHpHsi0vvYrMR@cluster0.fnh1e.mongodb.net/joyIndex"
+        );
         MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
                 .applyConnectionString(connectionString)
                 .build();
@@ -48,7 +50,7 @@ public class MongoConfig {
 
     @Bean
     public SimpleMongoClientDatabaseFactory mongoDbFactory() {
-        return new SimpleMongoClientDatabaseFactory(mongo(), "joyindex");
+        return new SimpleMongoClientDatabaseFactory(mongo(), "joyIndex");
     }
 
     @Bean
