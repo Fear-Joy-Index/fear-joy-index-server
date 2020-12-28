@@ -39,7 +39,7 @@ public class MongoConfig {
     @Bean
     public MongoClient mongo() {
         ConnectionString connectionString = new ConnectionString(
-                "mongodb+srv://test_admin:Lt2zHpHsi0vvYrMR@cluster0.fnh1e.mongodb.net/joyIndex?retryWrites=true&w=majority"
+                "mongodb://joydb:27017/joyIndex"
         );
         MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
                 .applyConnectionString(connectionString)
